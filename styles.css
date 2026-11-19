@@ -1,0 +1,496 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background: #0d241d;
+      color: #18231f;
+      min-height: 100vh;
+    }
+
+    /* ==========================================================================
+       1. PRIMEIRA INTERFACE (HERO EXTREMOZ TURISMO)
+       ========================================================================== */
+    .hero-section {
+      position: relative;
+      min-height: 100vh;
+      width: 100%;
+      background: linear-gradient(108deg, #0b1c17 0%, #163329 45%, #3b5034 74%, #9e8744 100%);
+      color: #ffffff;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 28px 6%;
+      overflow: hidden;
+    }
+
+    .hero-section::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 82% 48%, rgba(232, 196, 98, 0.16) 0%, transparent 55%);
+      pointer-events: none;
+    }
+
+    /* Cabeçalho Superior (apenas Início e Destinos conforme solicitado) */
+    .hero-nav {
+      position: relative;
+      z-index: 10;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+    .brand {
+      display: flex;
+      flex-direction: column;
+      text-decoration: none;
+      color: #ffffff;
+    }
+    .brand-main {
+      font-size: 16px;
+      font-weight: 800;
+      letter-spacing: 1.8px;
+      line-height: 1.1;
+    }
+    .brand-sub {
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 3.2px;
+      color: #d6c58f;
+      margin-top: 2px;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+      list-style: none;
+    }
+    .nav-links a {
+      color: rgba(255, 255, 255, 0.88);
+      text-decoration: none;
+      font-size: 12.5px;
+      font-weight: 600;
+      letter-spacing: 0.4px;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover, .nav-links a.active {
+      color: #e4c163;
+    }
+
+    /* Conteúdo Central do Hero */
+    .hero-content {
+      position: relative;
+      z-index: 10;
+      max-width: 680px;
+      margin: auto 0;
+      padding: 40px 0;
+    }
+    .hero-eyebrow {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 2.8px;
+      text-transform: uppercase;
+      color: #d8be73;
+      margin-bottom: 18px;
+    }
+    .hero-title {
+      font-size: clamp(46px, 6.8vw, 84px);
+      font-weight: 800;
+      line-height: 1.02;
+      letter-spacing: -1px;
+      margin-bottom: 22px;
+    }
+    .hero-title .line-white {
+      display: block;
+      color: #ffffff;
+    }
+    .hero-title .line-gold {
+      display: block;
+      color: #dfbe64;
+    }
+    .hero-subtitle {
+      font-size: 16px;
+      font-weight: 400;
+      color: rgba(255, 255, 255, 0.86);
+      line-height: 1.6;
+      margin-bottom: 34px;
+      max-width: 520px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+    .btn-primary {
+      background: #e1c066;
+      color: #0d1f19;
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 700;
+      padding: 14px 26px;
+      border-radius: 6px;
+      border: 1.5px solid #e1c066;
+      transition: 0.2s;
+      cursor: pointer;
+    }
+    .btn-primary:hover {
+      background: #edd07c;
+      transform: translateY(-2px);
+    }
+    .btn-outline {
+      background: rgba(255, 255, 255, 0.06);
+      color: #ffffff;
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 700;
+      padding: 14px 26px;
+      border-radius: 6px;
+      border: 1.5px solid rgba(255, 255, 255, 0.35);
+      transition: 0.2s;
+      cursor: pointer;
+    }
+    .btn-outline:hover {
+      background: rgba(255, 255, 255, 0.14);
+      border-color: #ffffff;
+      transform: translateY(-2px);
+    }
+
+    .hero-scroll {
+      position: relative;
+      z-index: 10;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: rgba(255, 255, 255, 0.72);
+      text-decoration: none;
+      font-size: 10.5px;
+      font-weight: 700;
+      letter-spacing: 2.2px;
+      text-transform: uppercase;
+      transition: color 0.2s;
+    }
+    .hero-scroll:hover { color: #e1c066; }
+
+    /* ==========================================================================
+       2. SEÇÃO DO MAPA INTERATIVO REALISTA (VIAS E PONTES CORRIGIDAS SOBRE AS ÁGUAS)
+       ========================================================================== */
+    .map-section {
+      background: #0d241d;
+      padding: 44px 3% 56px;
+      border-top: 2px solid #d8b45a;
+    }
+
+    .map-header-bar {
+      max-width: 1580px;
+      margin: 0 auto 18px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      color: #ffffff;
+    }
+    .map-header-title h2 {
+      font-size: 22px;
+      font-weight: 800;
+      letter-spacing: 0.5px;
+      color: #ffffff;
+    }
+    .map-header-title p {
+      font-size: 13px;
+      color: #c6d8cf;
+      margin-top: 3px;
+    }
+
+    .filter-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .pill {
+      background: rgba(255,255,255,0.09);
+      color: #fff;
+      border: 1px solid rgba(255,255,255,0.22);
+      padding: 8px 15px;
+      border-radius: 20px;
+      font-size: 11.5px;
+      font-weight: 700;
+      cursor: pointer;
+      font-family: inherit;
+      transition: 0.2s;
+    }
+    .pill.active, .pill:hover {
+      background: #d8b45a;
+      color: #081813;
+      border-color: #d8b45a;
+    }
+
+    .workspace {
+      display: grid;
+      grid-template-columns: 1fr 380px;
+      max-width: 1580px;
+      width: 100%;
+      margin: 0 auto;
+      gap: 18px;
+      align-items: start;
+    }
+
+    .map-board {
+      position: relative;
+      background: #176c8f;
+      border-radius: 14px;
+      overflow: hidden;
+      border: 3px solid #d8b45a;
+      box-shadow: 0 18px 44px rgba(0,0,0,0.48);
+      user-select: none;
+      width: 100%;
+      aspect-ratio: 1200 / 860;
+      touch-action: none;
+    }
+
+    .map-viewport {
+      width: 100%;
+      height: 100%;
+      transform-origin: 0 0;
+      cursor: grab;
+      will-change: transform;
+    }
+    .map-viewport:active { cursor: grabbing; }
+
+    svg.illustrated-map {
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+
+    .zoom-controls {
+      position: absolute;
+      top: 16px;
+      left: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      z-index: 20;
+    }
+    .zoom-btn {
+      width: 38px;
+      height: 38px;
+      border-radius: 8px;
+      border: 2px solid #081813;
+      background: #fff;
+      color: #081813;
+      font-size: 18px;
+      font-weight: 800;
+      cursor: pointer;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.28);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .zoom-btn:hover { background: #d8b45a; }
+
+    .map-hint {
+      position: absolute;
+      bottom: 14px;
+      right: 14px;
+      background: rgba(8, 24, 19, 0.88);
+      color: #f4efe1;
+      font-size: 11px;
+      font-weight: 600;
+      padding: 6px 12px;
+      border-radius: 20px;
+      border: 1px solid rgba(216, 180, 90, 0.5);
+      z-index: 20;
+      pointer-events: none;
+    }
+
+    /* Marcadores Interativos */
+    .pin-group {
+      cursor: pointer;
+      transition: opacity 0.2s ease;
+    }
+    .pin-inner {
+      transition: transform 0.18s ease;
+      transform-origin: 0px 0px;
+    }
+    .pin-group:hover .pin-inner {
+      transform: scale(1.16) translateY(-3px);
+    }
+    .pin-group.dimmed {
+      opacity: 0.2;
+      pointer-events: none;
+    }
+    .pin-group.selected .pin-inner {
+      transform: scale(1.22) translateY(-4px);
+    }
+    .pin-group.selected circle.pin-ring {
+      opacity: 1;
+    }
+
+    /* Painel Lateral: Foto + Descrição + Legenda */
+    .sidebar {
+      background: #f6f4ec;
+      border-radius: 14px;
+      border: 3px solid #d8b45a;
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      max-height: 860px;
+      overflow-y: auto;
+    }
+
+    .detail-card {
+      background: #fff;
+      border-radius: 10px;
+      overflow: hidden;
+      border-bottom: 4px solid #d32f2f;
+      box-shadow: 0 6px 16px rgba(0,0,0,0.09);
+      flex-shrink: 0;
+    }
+    .detail-photo-wrap {
+      position: relative;
+      width: 100%;
+      height: 180px;
+      background: #17362b;
+      overflow: hidden;
+    }
+    .detail-photo-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .detail-code-tag {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      background: #d32f2f;
+      color: #fff;
+      font-size: 13px;
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 2px solid #fff;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.35);
+    }
+    .detail-badge {
+      position: absolute;
+      bottom: 10px;
+      left: 10px;
+      font-size: 10px;
+      font-weight: 800;
+      text-transform: uppercase;
+      padding: 4px 9px;
+      border-radius: 4px;
+      background: rgba(8, 24, 19, 0.88);
+      color: #f4e2a8;
+      letter-spacing: 0.5px;
+    }
+    .detail-body {
+      padding: 14px 16px;
+    }
+    .detail-body h3 {
+      font-size: 16px;
+      color: #0d241d;
+      margin-bottom: 6px;
+      line-height: 1.25;
+    }
+    .detail-body p {
+      font-size: 12.5px;
+      color: #46544e;
+      line-height: 1.5;
+      margin-bottom: 8px;
+    }
+    .detail-loc {
+      font-size: 11px;
+      font-weight: 700;
+      color: #1e5641;
+    }
+
+    .legend-section h4 {
+      font-size: 12px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      color: #0d241d;
+      margin-bottom: 7px;
+      padding-bottom: 4px;
+      border-bottom: 2px solid #dcd8c8;
+    }
+    .legend-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      margin-bottom: 14px;
+    }
+    .legend-item {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      padding: 6px 8px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 11.5px;
+      font-weight: 700;
+      color: #1f2d28;
+      background: rgba(255,255,255,0.8);
+      transition: 0.15s;
+    }
+    .legend-item:hover, .legend-item.active {
+      background: #0d241d;
+      color: #fff;
+    }
+    .badge-code {
+      width: 23px;
+      height: 23px;
+      border-radius: 50%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 11px;
+      font-weight: 800;
+      color: #fff;
+      flex-shrink: 0;
+    }
+    .code-atrativo { background: #d32f2f; }
+    .code-servico { background: #1976d2; }
+
+    @media (max-width: 1024px) {
+      .workspace {
+        grid-template-columns: 1fr;
+      }
+      .sidebar { max-height: none; }
+    }
+
+/* Cartografia */
+.map-board { background: #dbe5dc; touch-action: auto; }
+.leaflet-map { width: 100%; height: 100%; min-height: 420px; z-index: 1; }
+.leaflet-container { font-family: 'Montserrat', sans-serif; }
+.map-hint { z-index: 500; }
+.map-pin {
+  display: grid; place-items: center; width: 34px; height: 42px;
+  color: #fff; font-size: 11px; font-weight: 800;
+  background: #b52e2e; border: 3px solid #fff; border-radius: 50% 50% 50% 4px;
+  box-shadow: 0 2px 8px #17251f88; transform: rotate(-45deg);
+}
+.map-pin span { transform: rotate(45deg); }
+.map-pin.service { background: #1769aa; }
+.map-pin.selected { outline: 3px solid #f1c84e; outline-offset: 2px; }
+.map-data-notice {
+  position: absolute; z-index: 800; left: 12px; right: 12px; bottom: 12px;
+  padding: 10px 12px; background: #fff; color: #18231f; border-radius: 6px;
+  font-size: 12px; box-shadow: 0 2px 8px #0003;
+}
+.leaflet-control-attribution { font-size: 9px !important; }
+@media (max-width: 700px) {
+  .leaflet-map { min-height: 360px; }
+  .zoom-controls, .map-hint { display: none; }
+}

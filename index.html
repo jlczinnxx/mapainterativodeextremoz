@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Extremoz Turismo — Descubra Extremoz / RN</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <link rel="stylesheet" href="styles.css" />
+
+  <meta name="description" content="Mapa interativo de pontos tur?sticos e servi?os de Extremoz, Rio Grande do Norte." />
+</head>
+<body>
+
+  <!-- ========================================================================
+       1. PRIMEIRA INTERFACE: HERO EXTREMOZ TURISMO
+       ======================================================================== -->
+  <section class="hero-section" id="inicio">
+    <nav class="hero-nav">
+      <a href="#inicio" class="brand">
+        <span class="brand-main">EXTREMOZ</span>
+        <span class="brand-sub">Turismo</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#inicio" class="active">Início</a></li>
+        <li><a href="#mapa" data-jump-filter="atrativo">Destinos</a></li>
+      </ul>
+    </nav>
+
+    <div class="hero-content">
+      <div class="hero-eyebrow">RIO GRANDE DO NORTE • BRASIL</div>
+      <h1 class="hero-title">
+        <span class="line-white">Descubra</span>
+        <span class="line-gold">Extremoz</span>
+      </h1>
+      <p class="hero-subtitle">Praias, lagoas, natureza e cultura em um só lugar.</p>
+      <div class="hero-actions">
+        <a href="#mapa" class="btn-primary" data-jump-filter="atrativo">Explorar destinos</a>
+        <a href="#mapa" class="btn-outline" data-jump-filter="todos">Abrir mapa</a>
+      </div>
+    </div>
+
+    <a href="#mapa" class="hero-scroll">↓ ROLE PARA EXPLORAR</a>
+  </section>
+
+  <!-- ========================================================================
+       2. MAPA INTERATIVO REALISTA (TRAÇADO VIÁRIO CORRIGIDO — SEM RUAS SOBRE LAGOAS)
+       ======================================================================== -->
+  <section class="map-section" id="mapa">
+    <div class="map-header-bar">
+      <div class="map-header-title">
+        <h2>Mapa Turístico Interativo — Extremoz / RN</h2>
+        <p>Selecione um marcador no mapa ou na lista para visualizar a imagem e os detalhes do local</p>
+      </div>
+      <div class="filter-pills">
+        <button class="pill active" data-filter="todos">Todos os Pontos (14 de 55)</button>
+        <button class="pill" data-filter="atrativo">Atrativos Turísticos (A–J)</button>
+        <button class="pill" data-filter="servico">Serviços e Apoio (1–4)</button>
+      </div>
+    </div>
+
+    <div class="workspace">
+      <div class="map-board" id="mapBoard">
+        <div class="zoom-controls">
+          <button class="zoom-btn" id="zoomIn" title="Aproximar">+</button>
+          <button class="zoom-btn" id="zoomOut" title="Afastar">−</button>
+          <button class="zoom-btn" id="zoomReset" title="Centralizar mapa" style="font-size:14px;">⌂</button>
+        </div>
+        <div class="map-hint">Arraste para explorar • Scroll ou + / − para aproximar</div>
+
+        <div id="map" class="leaflet-map" role="application" aria-label="Mapa interativo de Extremoz"></div>
+      </div>
+
+      <!-- PAINEL LATERAL: IMAGEM + DESCRIÇÃO DO PONTO + LEGENDA -->
+      <aside class="sidebar">
+        <div class="detail-card" id="detailCard">
+          <div class="detail-photo-wrap">
+            <img id="detailImg" src="" alt="Imagem do ponto turístico" />
+            <span class="detail-code-tag" id="detailCodeTag">A</span>
+            <span class="detail-badge" id="detailType">Atrativo Natural</span>
+          </div>
+          <div class="detail-body">
+            <h3 id="detailTitle">Praia e Dunas de Genipabu</h3>
+            <p id="detailDesc">Principal cartão-postal de Extremoz, conhecido pelas dunas móveis, lagoa de água doce, mirantes naturais e passeios de buggy.</p>
+            <div class="detail-loc" id="detailLoc">📍 Genipabu, Litoral Central</div>
+          </div>
+        </div>
+
+        <div class="legend-section">
+          <h4>Atrativos Turísticos (A – J)</h4>
+          <ul class="legend-list" id="legendAtrativos"></ul>
+
+          <h4>Serviços e Apoio Local (1 – 4)</h4>
+          <ul class="legend-list" id="legendServicos"></ul>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="script.js"></script>
+
+</body>
+</html>
